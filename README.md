@@ -10,6 +10,7 @@ A naive music app for learning vue.
 - vue-router
 - stylus
   - [stylus-loader](https://github.com/shama/stylus-loader)
+- [jsonp](https://github.com/webmodules/jsonp)
 - [fastclick](https://github.com/ftlabs/fastclick)
 - vue-cli with PWA support
   - webpack
