@@ -9,4 +9,6 @@ A naive music app for learning vue.
 - **vue**
 - vue-router
 - stylus
+- [fastclick](https://github.com/ftlabs/fastclick)
 - vue-cli with PWA support
+  - webpack
