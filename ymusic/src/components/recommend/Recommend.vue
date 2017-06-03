@@ -1,12 +1,12 @@
 <template>
   <div class="recommend">
-    <Scroll class="recommend-content" :data="discList">
+    <Scroll ref="scroll" class="recommend-content" :data="discList">
       <div>
         <div v-if="recommends.length" class="slider-wrapper">
           <Slider>
             <div v-for="item in recommends">
               <a :href="item.linkUrl">
-                <img :src="item.picUrl"/>
+                <img :src="item.picUrl" @load="loadImage"/>
               </a>
             </div>
           </Slider>
@@ -44,6 +44,7 @@
       }
     },
     created () {
+      // TODO: scroll over bottom when mock _getRecommend after _getDiscList by setTimeout, will be improved later
       this._getRecommend()
       this._getDiscList()
     },
@@ -61,6 +62,12 @@
             this.discList = res.data.list
           }
         })
+      },
+      loadImage () {
+        if (!this.checkLoaded) {
+          this.checkLoaded = true
+          this.$refs.scroll.refresh()
+        }
       }
     },
     components: {
