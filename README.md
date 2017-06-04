@@ -10,6 +10,7 @@ A naive music app for learning vue.
 - vue-router
 - axios
 - [jsonp](https://github.com/webmodules/jsonp)
+- [vue-lazyload](https://github.com/hilongjw/vue-lazyload)
 - stylus
   - [stylus-loader](https://github.com/shama/stylus-loader)
 - [fastclick](https://github.com/ftlabs/fastclick)
