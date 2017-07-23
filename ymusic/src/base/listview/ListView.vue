@@ -4,8 +4,7 @@
           :listenScroll="listenScroll"
           :probeType="probeType"
           ref="listView"
-          @scroll="scroll"
-  >
+          @scroll="scroll">
     <ul>
       <li v-for="group in data" class="list-group" ref="listGroup">
         <h2 class="list-group-title">{{group.title}}</h2>
@@ -17,6 +16,7 @@
         </ul>
       </li>
     </ul>
+
     <div class="list-shortcut" @touchstart.stop.prevent="onShortcutTouchStart"
          @touchmove.stop.prevent="onShortcutTouchMove">
       <ul>
@@ -27,6 +27,10 @@
           {{item}}
         </li>
       </ul>
+    </div>
+
+    <div class="list-fixed" v-show="fixedTitle">
+      <h1 class="fixed-title">{{fixedTitle}}</h1>
     </div>
   </Scroll>
 </template>
@@ -55,6 +59,12 @@
         return this.data.map((group) => {
           return group.title.substr(0, 1)
         })
+      },
+      fixedTitle () {
+        if (this.scrollY > 0) {
+          return ''
+        }
+        return this.data[this.currentIndex] ? this.data[this.currentIndex].title : ''
       }
     },
     created () {
