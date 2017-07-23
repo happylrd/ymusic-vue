@@ -8,6 +8,7 @@ A naive music app for learning vue.
 
 - **vue**
 - vue-router
+- vuex
 - axios
 - [jsonp](https://github.com/webmodules/jsonp)
 - [vue-lazyload](https://github.com/hilongjw/vue-lazyload)
