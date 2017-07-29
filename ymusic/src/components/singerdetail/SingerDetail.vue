@@ -1,7 +1,6 @@
 <template>
   <transition name="slide">
-    <div class="singer-detail">
-    </div>
+    <MusicList :title="title" :bgImage="bgImage" :songs="songs"></MusicList>
   </transition>
 </template>
 
@@ -10,6 +9,7 @@
   import { getSingerDetail } from 'api/singer'
   import { ERR_OK } from 'api/config'
   import { createSong } from 'common/js/song'
+  import MusicList from 'components/musiclist/MusicList'
 
   export default {
     data () {
@@ -18,6 +18,12 @@
       }
     },
     computed: {
+      title () {
+        return this.singer.name
+      },
+      bgImage () {
+        return this.singer.avatar
+      },
       ...mapGetters([
         'singer'
       ])
@@ -49,21 +55,15 @@
         })
         return ret
       }
+    },
+    components: {
+      MusicList
     }
   }
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
   @import "~common/stylus/variable"
-
-  .singer-detail
-    position: fixed
-    z-index: 100
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: $color-background
 
   .slide-enter-active, .slide-leave-active
     transition: all 0.3s
