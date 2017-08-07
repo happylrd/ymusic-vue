@@ -16,6 +16,7 @@ A naive music app for learning vue.
   - [stylus-loader](https://github.com/shama/stylus-loader)
 - [fastclick](https://github.com/ftlabs/fastclick)
 - [better-scroll](https://github.com/ustbhuangyi/better-scroll)
+- [create-keyframe-animation](https://github.com/HenrikJoreteg/create-keyframe-animation)
 - vue-cli with PWA support
   - webpack
   - express
